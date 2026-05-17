@@ -11,16 +11,17 @@ const CLIENT_ID = '1789c2994f3f9c542e30';
 function api(method, urlPath, body, token) {
   return new Promise((resolve, reject) => {
     const bodyStr = body ? JSON.stringify(body) : '';
+    const isOAuth = urlPath.startsWith('/login/');
     const headers = {
       'User-Agent': 'jack-portfolio-deploy',
-      'Accept': 'application/vnd.github.v3+json',
+      'Accept': isOAuth ? 'application/json' : 'application/vnd.github.v3+json',
       'Content-Type': body ? 'application/json' : undefined,
       'Content-Length': body ? Buffer.byteLength(bodyStr) : undefined,
     };
     if (token) headers['Authorization'] = `token ${token}`;
 
     const req = https.request({
-      hostname: urlPath.includes('github.com/login') ? 'github.com' : 'api.github.com',
+      hostname: isOAuth ? 'github.com' : 'api.github.com',
       path: urlPath,
       method,
       headers,
