@@ -10,7 +10,7 @@ function enc(path: string) {
   return path.split('/').map(encodeURIComponent).join('/');
 }
 
-const baseUrl = '/video-collection';
+const baseUrl = import.meta.env.BASE_URL + 'video-collection';
 
 const allVideos: VideoItem[] = [
   { label: 'AE动画作品', src: `${baseUrl}/AE动画作品/AE-动效-TK-高播放 (1).mp4` },

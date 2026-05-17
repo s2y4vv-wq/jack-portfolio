@@ -8,7 +8,7 @@ export interface VideoFolder {
   videos: VideoItem[];
 }
 
-const baseUrl = '/video-collection';
+const baseUrl = import.meta.env.BASE_URL + 'video-collection';
 
 export const videoFolders: VideoFolder[] = [
   {

@@ -17,17 +17,17 @@ const projects: Project[] = [
     num: '01',
     name: 'movie',
     category: '视频作品',
-    col1Img1: '/cover-images/1.png',
-    col1Img2: '/cover-images/3.png',
-    col2Img: '/cover-images/8.png',
+    col1Img1: import.meta.env.BASE_URL + 'cover-images/1.png',
+    col1Img2: import.meta.env.BASE_URL + 'cover-images/3.png',
+    col2Img: import.meta.env.BASE_URL + 'cover-images/8.png',
   },
   {
     num: '02',
     name: '',
     category: '画布&工作流',
-    col1Img1: '/cover-images/4.png',
-    col1Img2: '/cover-images/5.png',
-    col2Img: '/cover-images/9.png',
+    col1Img1: import.meta.env.BASE_URL + 'cover-images/4.png',
+    col1Img2: import.meta.env.BASE_URL + 'cover-images/5.png',
+    col2Img: import.meta.env.BASE_URL + 'cover-images/9.png',
   },
 ];
 
